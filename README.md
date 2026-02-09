@@ -25,7 +25,7 @@
 
 # Решение 2
 
-
+![alt text](https://github.com/Sayward-k8/sdb-hw-12-03/blob/main/img/2.png)
 
 # Задание 3*
 
