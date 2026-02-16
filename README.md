@@ -91,10 +91,17 @@ SERVER C (stores)
 [полный конфиг](https://github.com/Sayward-k8/sdb-hw-12-07/tree/main/SHARD)
 
 [docker-compose.yml](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/docker-compose.yml)
+
 [shards_books.sql](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/books/shards_books.sql)
+
 [shards.sql для books_1](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/books_1/shards.sql)
+
 [shards.sql для books_2](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/books_2/shards.sql)
+
 [shards_users.sql](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/users/shards_users.sql)
+
 [shards.sql для users_1](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/users_1/shards.sql)
+
 [shards.sql для users_2](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/users_2/shards.sql)
+
 [shards.sql для stores](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/stores/shards.sql)
