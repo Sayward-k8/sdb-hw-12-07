@@ -36,6 +36,51 @@ SAN-кластер (Storage Area Network Cluster) - главный плюс - м
 
 ![alt text](https://github.com/Sayward-k8/sdb-hw-12-03/blob/main/img/2.png)
 
+#### Вертикальный шардинг
+Разносим таблицы по трем серверам (каждая таблица на отдельном сервере)
+
+| Сервер | Таблицы |
+|--------|---------|
+| Server 1 | users, user_books |
+| Server 2 | books |
+| Server 3 | stores |
+
+#### Горизонтальный шардинг
+
+SERVER A (users + user_books)
+Ключ шардирования: user_id
+
+| SERVER A | user_id |
+|--------|---------|
+| Server A1 | 1-100 |
+| Server A2 | 101-200 |
+| Server A3 | 201-300 |
+| Server A* | и тд. |
+
+Либо использовать чётные ID/нечётные ID
+
+SERVER B (books)
+Ключ шардирования: book_id
+
+| SERVER B | book_id |
+|--------|---------|
+| Server B1 | 1-100 |
+| Server B2 | 101-200 |
+| Server B3 | 201-300 |
+| Server B* | и тд. |
+
+Либо использовать чётные ID/нечётные ID
+
+SERVER C (stores)
+
+| SERVER C | region |
+|--------|---------|
+| Server C1 | территориальная принадлежность |
+| Server C2 | например страна |
+| Server C3 |  регионы РФ |
+| Server C* | или города |
+
+
 # Задание 3*
 
 Выполните настройку выбранных методов шардинга из задания 2.
