@@ -41,9 +41,9 @@ SAN-кластер (Storage Area Network Cluster) - главный плюс - м
 
 | Сервер | Таблицы |
 |--------|---------|
-| Server 1 | users, user_books |
-| Server 2 | books |
-| Server 3 | stores |
+| Server A | users, user_books |
+| Server B | books |
+| Server C | stores |
 
 #### Горизонтальный шардинг
 
