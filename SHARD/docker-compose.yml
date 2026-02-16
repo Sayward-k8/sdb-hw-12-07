@@ -12,9 +12,6 @@ services:
       - ./conf/users/shards_users.sql:/docker-entrypoint-initdb.d/start.sql
     ports:
       - "5431:5432"
-    depends_on:
-      - users_1
-      - users_2
     restart: on-failure
 
   users_1:
@@ -49,9 +46,6 @@ services:
       - ./conf/books/shards_books.sql:/docker-entrypoint-initdb.d/start.sql
     ports:
       - "5435:5432"
-    depends_on:
-      - books_1
-      - books_2
     restart: on-failure
 
   books_1:
@@ -85,4 +79,5 @@ services:
     volumes:
       - ./conf/stores/shards.sql:/docker-entrypoint-initdb.d/start.sql
     ports:
+
       - "5438:5432"
