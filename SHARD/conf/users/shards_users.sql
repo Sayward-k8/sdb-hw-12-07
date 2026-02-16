@@ -79,22 +79,22 @@ CREATE RULE user_books_delete AS ON DELETE TO user_books
 	DO INSTEAD NOTHING;
 
 CREATE RULE users_insert_to_1 AS ON INSERT TO users
-    WHERE (user_id % 2 = 0)
+    WHERE (user_id % 2 = 1)
     DO INSTEAD INSERT INTO users_1 
 	VALUES (NEW.*);
 
 CREATE RULE users_insert_to_2 AS ON INSERT TO users
-    WHERE (user_id % 2 = 1)
+    WHERE (user_id % 2 = 0)
     DO INSTEAD INSERT INTO users_2 
 	VALUES (NEW.*);
 
 CREATE RULE user_books_insert_to_1 AS ON INSERT TO user_books
-    WHERE (user_id % 2 = 0)
+    WHERE (user_id % 2 = 1)
     DO INSTEAD INSERT INTO user_books_1 
 	VALUES (NEW.*);
 
 CREATE RULE user_books_insert_to_2 AS ON INSERT TO user_books
-    WHERE (user_id % 2 = 1)
+    WHERE (user_id % 2 = 0)
     DO INSTEAD INSERT INTO user_books_2 
 	VALUES (NEW.*);
 
@@ -116,3 +116,4 @@ INSERT INTO user_books (user_id, book_id, purchase_date) VALUES
 (4, 102, '2023-01-22 15:40:20'),
 (5, 203, '2023-02-28 09:15:33'),
 (6, 305, '2023-03-08 08:55:44');
+
