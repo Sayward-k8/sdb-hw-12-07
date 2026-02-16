@@ -34,7 +34,7 @@ SAN-кластер (Storage Area Network Cluster) - главный плюс - м
 
 # Решение 2
 
-![alt text](https://github.com/Sayward-k8/sdb-hw-12-03/blob/main/img/2.png)
+![alt text](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/img/12-7-1.png)
 
 #### Вертикальный шардинг
 Разносим таблицы по трем серверам (каждая таблица на отдельном сервере)
