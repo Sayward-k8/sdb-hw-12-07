@@ -1,0 +1,88 @@
+version: '3.8'
+name: shards
+
+services:
+  users:
+    image: postgres:17
+    container_name: users
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: users_db
+    volumes:
+      - ./conf/users/shards_users.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5431:5432"
+    depends_on:
+      - users_1
+      - users_2
+    restart: on-failure
+
+  users_1:
+    image: postgres:17
+    container_name: users_1
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: users_db
+    volumes:
+      - ./conf/users_1/shards.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5433:5432"
+
+  users_2:
+    image: postgres:17
+    container_name: users_2
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: users_db
+    volumes:
+      - ./conf/users_2/shards.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5434:5432"
+
+  books:
+    image: postgres:17
+    container_name: books
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: books_db
+    volumes:
+      - ./conf/books/shards_books.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5435:5432"
+    depends_on:
+      - books_1
+      - books_2
+    restart: on-failure
+
+  books_1:
+    image: postgres:17
+    container_name: books_1
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: books_db
+    volumes:
+      - ./conf/books_1/shards.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5436:5432"
+
+  books_2:
+    image: postgres:17
+    container_name: books_2
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: books_db
+    volumes:
+      - ./conf/books_2/shards.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5437:5432"
+
+  stores:
+    image: postgres:17
+    container_name: stores
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: stores_db
+    volumes:
+      - ./conf/stores/shards.sql:/docker-entrypoint-initdb.d/start.sql
+    ports:
+      - "5438:5432"
