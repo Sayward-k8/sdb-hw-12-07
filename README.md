@@ -31,6 +31,7 @@ Master-Slave x N - так же, как и мастер-слейв, но мног
 
 ![alt text](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/img/12-7-1.png)
 
+
 #### Вертикальный шардинг
 Разносим таблицы по трем серверам (каждая таблица на отдельном сервере)
 
@@ -88,7 +89,6 @@ SERVER C (stores)
 `` docker-compose up -d users_1 users_2 books_1 books_2 ``, а затем `` docker-compose up -d stores users books ``
 
 [полный конфиг](https://github.com/Sayward-k8/sdb-hw-12-07/tree/main/SHARD)
-
 
 [docker-compose.yml](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/docker-compose.yml)
 [shards_books.sql](https://github.com/Sayward-k8/sdb-hw-12-07/blob/main/SHARD/conf/books/shards_books.sql)
